@@ -19,7 +19,7 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.blue
+                Color.indigo
                     .ignoresSafeArea()
                 
                 Circle()
@@ -29,10 +29,11 @@ struct LoginView: View {
                 
                 Circle()
                     .scale(1.5)
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                 
                 VStack(spacing: 16) {
                     Text(isLoginMode ? "Login" : "Create Username")
+                        .foregroundColor(.white)
                         .font(.largeTitle)
                         .bold()
                     
@@ -44,7 +45,7 @@ struct LoginView: View {
                         .bold()
                         .padding()
                         .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
+                        .background(Color.white.opacity(0.5))
                         .cornerRadius(10)
                     
                     SecureField("Password", text: $password)
@@ -52,8 +53,9 @@ struct LoginView: View {
                         .bold()
                         .padding()
                         .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
+                        .background(Color.white.opacity(0.5))
                         .cornerRadius(10)
+                        .foregroundColor(Color.white)
                     
                     Button {
                         //
@@ -62,18 +64,19 @@ struct LoginView: View {
                             .foregroundColor(.white)
                             .padding(10)
                             .frame(width: 300, height: 50)
-                            .background(.blue)
+                            .background(.indigo)
                             .cornerRadius(10)
                             .padding(.top, 20)
                         
                     }
                     HStack {
                         Text(isLoginMode ? "Don't have an account yet?" : "Have an account?")
-                        
+                            .foregroundColor(.white)
                         Button {
                             isLoginMode.toggle()
                         } label: {
                             Text(isLoginMode ? "Create Account" : "Login")
+                                .foregroundColor(.indigo)
                         }
                     }
                     .padding()
