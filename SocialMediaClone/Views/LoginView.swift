@@ -79,8 +79,12 @@ struct LoginView: View {
                                 .foregroundColor(.indigo)
                         }
                     }
-                    .padding()
+                    
+                    Text(loginStatusMessage)
+                        .foregroundColor(.red)
+                    
                 }
+                .padding()
             }
         }
     }
