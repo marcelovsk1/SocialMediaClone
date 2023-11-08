@@ -17,7 +17,39 @@ struct LoginView: View {
     @State private var shouldShowImagePicker = false
     
     var body: some View {
-        Text("hello")
+        NavigationView {
+            ZStack {
+                Color.blue
+                    .ignoresSafeArea()
+                
+                Circle()
+                    .scale(1.8)
+                    .foregroundColor(.white)
+                    .opacity(0.15)
+                
+                Circle()
+                    .scale(1.5)
+                    .foregroundColor(.white)
+                
+                VStack(spacing: 16) {
+                    Text(isLoginMode ? "Login" : "Create Username")
+                        .font(.largeTitle)
+                        .bold()
+                    
+                    // image picker if isloginmode is false
+                    
+                    TextField("Email", text: $email)
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
+                        .bold()
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                }
+                .padding()
+            }
+        }
     }
 }
 
