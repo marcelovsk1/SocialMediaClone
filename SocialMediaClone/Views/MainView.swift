@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var loginViewModel = LoginViewModel()
+    
     var body: some View {
-        LoginView()
+        LoginView(loginViewModel: loginViewModel)
     }
 }
 
