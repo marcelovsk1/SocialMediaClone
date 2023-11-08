@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @State private var isLoginMode = false
+    @State private var email = ""
+    @State private var password = ""
+    @State private var image: UIImage?
+    @State private var loginStatusMessage = ""
+    @State private var shouldShowImagePicker = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("hello")
     }
 }
 
