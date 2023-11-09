@@ -59,7 +59,18 @@ class LoginViewModel: ObservableObject {
                 
                 print(url?.absoluteString ?? "error")
                 guard let url = url else { return }
+                self.storeUserInformation(email: email, imageProfileURL: url)
             }
         }
+    }
+    
+    func storeUserInformation(email: String, imageProfileURL: URL) {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        let userData = ["email": email, "uid": uid, "profileimageurl": imageProfileURL.absoluteString]
+        
+        FirebaseManager.shared.firestore
+            .collection("users")
+            .document(uid)
+            .setData(userData)
     }
 }
