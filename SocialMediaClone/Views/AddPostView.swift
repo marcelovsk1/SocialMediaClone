@@ -86,7 +86,11 @@ struct AddPostView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity, minHeight: 50)
                         .background(Color.indigo)
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
                     }
+            
+            Spacer()
         }
         .cornerRadius(20)
         .padding(.horizontal, 20)
