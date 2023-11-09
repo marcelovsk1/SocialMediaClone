@@ -21,7 +21,7 @@ struct MainView: View {
                         "rectangle.portrait.on.rectangle.portrait.angled")
                         Text("Posts")
                     }
-                ProfileView()
+                ProfileView(loginViewModel: loginViewModel)
                     .tabItem {
                         Image(systemName: "gear")
                         Text("Profile")

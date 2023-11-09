@@ -73,4 +73,9 @@ class LoginViewModel: ObservableObject {
             .document(uid)
             .setData(userData)
     }
+    
+    func handleSignOut() {
+        isCurrentlyLoggedOut = true
+        try? FirebaseManager.shared.auth.signOut()
+    }
 }

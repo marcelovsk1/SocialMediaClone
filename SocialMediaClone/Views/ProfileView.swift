@@ -11,7 +11,11 @@ struct ProfileView: View {
     @ObservedObject var loginViewModel: LoginViewModel
     
     var body: some View {
-        Text("OLA")
+        NavigationView {
+            VStack {
+                
+            }
+        }
     }
 }
 
