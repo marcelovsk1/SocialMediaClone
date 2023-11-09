@@ -69,10 +69,24 @@ struct AddPostView: View {
                     return
                 }
                 
+                guard let email = Auth.auth().currentUser?.email else {
+                    print("Current user not authenticated.") 
+                    return
+                }
                 
+                let name = email.components(separatedBy: "@").first ?? ""
+                
+                addPostViewModel.addPost(name: name, postTitle: postTitle, image: selectedImage, date: Date())
+                
+                dismiss()
                 } label: {
-                    
-            }
+                    Text("Share")
+                        .font(.title2)
+                        .bold()
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(Color.indigo)
+                    }
         }
         .cornerRadius(20)
         .padding(.horizontal, 20)
