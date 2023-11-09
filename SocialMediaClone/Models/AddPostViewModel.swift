@@ -19,6 +19,10 @@ class AddPostViewModel {
             "timestamp": date,
             "useruid": uid
         ])
+        
+        guard let image = image else { return }
+        
+        savePostImage(image: image, documentID: ref.documentID as String)
     }
     
     func savePostImage(image: UIImage, documentID: String) {
