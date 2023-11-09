@@ -15,8 +15,25 @@ struct AddPostView: View {
     @State private var isShowingImagePicker = false
     @State private var errorMessage = ""
     
+    var addPostViewModel = AddPostViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack(spacing: 15) {
+                Image(systemName: "person.crop.circle.fill")
+                    .font(.system(size: 40))
+                    .foregroundColor(.indigo)
+                TextField("Share your thoughts...", text: $postTitle)
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 10)
+        }
+        .cornerRadius(20)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 25)
+        .sheet(isPresented: $isShowingImagePicker) {
+            ImagePicker(image: $selectedImage)
+        }
     }
 }
 
