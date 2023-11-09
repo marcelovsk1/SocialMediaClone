@@ -11,7 +11,23 @@ struct MainView: View {
     @StateObject var loginViewModel = LoginViewModel()
     
     var body: some View {
-        LoginView(loginViewModel: loginViewModel)
+        if loginViewModel.isCurrentlyLoggedOut {
+            LoginView(loginViewModel: loginViewModel)
+        } else {
+            TabView {
+                PostsView()
+                    .tabItem {
+                        Image(systemName:
+                        "rectangle.portrait.on.rectangle.portrait.angled")
+                        Text("Posts")
+                    }
+                ProfileView()
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Profile")
+                    }
+            }
+        }
     }
 }
 

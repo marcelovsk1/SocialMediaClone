@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B4568FB2AFD202300BCC93F /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4568FA2AFD202300BCC93F /* PostsView.swift */; };
+		0B4568FD2AFD204300BCC93F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4568FC2AFD204300BCC93F /* ProfileView.swift */; };
 		0BBB64532AFBC4C800A47052 /* SocialMediaCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB64522AFBC4C800A47052 /* SocialMediaCloneApp.swift */; };
 		0BBB64552AFBC4C800A47052 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB64542AFBC4C800A47052 /* MainView.swift */; };
 		0BBB64572AFBC4CE00A47052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BBB64562AFBC4CE00A47052 /* Assets.xcassets */; };
@@ -73,6 +75,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B4568FA2AFD202300BCC93F /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
+		0B4568FC2AFD204300BCC93F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0BBB644F2AFBC4C800A47052 /* SocialMediaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMediaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BBB64522AFBC4C800A47052 /* SocialMediaCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaCloneApp.swift; sourceTree = "<group>"; };
 		0BBB64542AFBC4C800A47052 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 			children = (
 				0BBB64542AFBC4C800A47052 /* MainView.swift */,
 				0BBB64652AFBF13900A47052 /* LoginView.swift */,
+				0B4568FA2AFD202300BCC93F /* PostsView.swift */,
+				0B4568FC2AFD204300BCC93F /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,6 +350,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B4568FD2AFD204300BCC93F /* ProfileView.swift in Sources */,
+				0B4568FB2AFD202300BCC93F /* PostsView.swift in Sources */,
 				0BBB64662AFBF13900A47052 /* LoginView.swift in Sources */,
 				0BBB64682AFBFBD400A47052 /* ImagePicker.swift in Sources */,
 				0BBB65372AFC0D2900A47052 /* LoginViewModel.swift in Sources */,
