@@ -29,7 +29,7 @@ class LoginViewModel: ObservableObject {
     }
     
     func createNewAccount(email: String, password: String, image: UIImage) {
-        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, error in
+        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { [self] result, error in
             if let error = error {
                 print("Failed to create user \(error)")
                 return
@@ -37,6 +37,7 @@ class LoginViewModel: ObservableObject {
             
             print("Successfully created user \(String(describing: result?.user.uid))")
             self.loginUser(email: email, password: password)
+            persistImageToStorage(email: email, image: image)
         }
     }
     
