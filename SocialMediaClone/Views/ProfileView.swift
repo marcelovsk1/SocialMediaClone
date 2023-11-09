@@ -11,6 +11,7 @@ struct ProfileView: View {
     @ObservedObject var loginViewModel: LoginViewModel
     
     @State private var showLogOutOptions = false
+    @State private var showAddPostView = false
     
     var body: some View {
         NavigationView {
@@ -37,6 +38,20 @@ struct ProfileView: View {
                     loginViewModel.handleSignOut()
                 }), .cancel()
                             ])
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showAddPostView.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.system(size: 24))
+                            .foregroundColor(.indigo)
+                    }
+                }
+            }
+            .sheet(isPresented: $showAddPostView)  {
+                AddPostView()
             }
         }
     }
