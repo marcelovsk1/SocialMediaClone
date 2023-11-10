@@ -41,6 +41,17 @@ struct SearchView: View {
                 }
             }
             .transition(.move(edge: .top))
+            
+            Spacer()
+            
+            ScrollView {
+                ForEach(postsViewModel.posts.filter({ post in
+                    text.isEmpty ? true : post.name.localizedStandardContains(text)
+                })) { post in
+                    PostComponent(post: post)
+                        .padding(.bottom)
+                }
+            }
         }
         .padding()
     }
