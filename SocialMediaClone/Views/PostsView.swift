@@ -96,6 +96,10 @@ struct PostsView: View {
                     }
                 }
             }
+            .refreshable {
+                postsViewModel.posts = [Post]()
+                postsViewModel.fetchAllPosts()
+            }
         }
     }
 }
