@@ -52,9 +52,14 @@ struct ProfilePostComponent: View {
 
 struct ProfileView: View {
     @ObservedObject var loginViewModel: LoginViewModel
+    @StateObject var profileViewModel = ProfileViewModel()
     
     @State private var showLogOutOptions = false
     @State private var showAddPostView = false
+    @State private var profileImage: UIImage?
+    @State private var isLoadingProfileImage = false
+    @State private var isRefreshing = false
+    @State private var isInitialized = false
     
     var body: some View {
         NavigationView {
