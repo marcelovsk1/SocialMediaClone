@@ -11,6 +11,10 @@ import UIKit
 class PostsViewModel: ObservableObject {
     @Published var posts = [Post]()
     
+    init() {
+        fetchAllPosts()
+    }
+    
     func fetchAllPosts() {
         FirebaseManager.shared.firestore
             .collection("posts")
