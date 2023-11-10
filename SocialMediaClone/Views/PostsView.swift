@@ -50,6 +50,16 @@ struct PostComponent: View {
                 
                 Spacer()
             }
+            
+            HStack {
+                Text(post.postTitle)
+                    .bold()
+                
+                Spacer()
+                Text(post.timestamp.formatted())
+                    .font(.caption2)
+            }
+            .padding()
         }
         .onAppear {
             isLoadingImage = true
