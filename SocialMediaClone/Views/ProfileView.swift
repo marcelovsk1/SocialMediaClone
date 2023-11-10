@@ -72,7 +72,28 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack {
-                
+                HStack {
+                    Image(uiImage: profileImage ?? UIImage(systemName: "person.circle")!)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 60, height: 60)
+                        .clipped()
+                        .cornerRadius(50)
+                        .overlay(
+                        RoundedRectangle(cornerRadius: 44)
+                            .stroke(Color(.label), lineWidth: 1)
+                        )
+                        .padding()
+                    
+                    VStack {
+                        Text((email ?? "").components(separatedBy: "@").first ?? "")
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.leading)
+                        
+                    }
+                    
+                    Spacer ()
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
