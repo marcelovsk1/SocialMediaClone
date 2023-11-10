@@ -132,6 +132,23 @@ struct ProfileView: View {
             }
         }
     }
+    
+    func getProfileImage() {
+        guard let uid = uid else { return }
+        let storageRef = Storage.storage().reference(withPath: uid)
+        storageRef.getData(maxSize: 3 * 1024 * 1024) { data, error in
+            if let error = error {
+                print("Error while downloading profile image, \(error.localizedDescription)")
+                return
+            }
+            guard let imageData = data, let image = UIImage(data: imageData)
+            else { return }
+            DispatchQueue.main.async {
+                profileImage = image
+                isLoadingProfileImage = false
+            }
+        }
+    }
 }
 
 #Preview {
