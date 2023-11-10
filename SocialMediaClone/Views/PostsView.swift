@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct PostComponent: View {
     let post: Post
@@ -60,6 +61,15 @@ struct PostComponent: View {
                     .font(.caption2)
             }
             .padding()
+            
+            if let url = URL(string: post.imageURL) {
+                KFImage(url)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 300, maxHeight: 200)
+            } else {
+                ProgressView()
+            }
         }
         .onAppear {
             isLoadingImage = true
