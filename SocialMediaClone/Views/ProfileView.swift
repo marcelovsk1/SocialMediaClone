@@ -6,6 +6,49 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import FirebaseStorage
+import Kingfisher
+
+struct ProfilePostComponent: View {
+    let post: Post
+    
+    var body: some View {
+        VStack {
+            Divider()
+                .padding(.horizontal)
+            
+            HStack {
+                Text(post.name)
+                    .padding(.vertical, 2)
+                    .padding(.horizontal)
+                    .foregroundColor(.indigo)
+                
+                Spacer()
+            }
+            
+            HStack {
+                Text(post.postTitle)
+                    .bold()
+                
+                Spacer()
+                Text(post.timestamp.formatted())
+                    .font(.caption2)
+            }
+            .padding()
+            
+            if let url = URL(string: post.imageURL) {
+                KFImage(url)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 300, maxHeight: 200)
+            } else {
+                ProgressView()
+            }
+        }
+    }
+}
+
 
 struct ProfileView: View {
     @ObservedObject var loginViewModel: LoginViewModel
