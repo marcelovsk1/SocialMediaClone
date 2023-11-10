@@ -61,6 +61,14 @@ struct ProfileView: View {
     @State private var isRefreshing = false
     @State private var isInitialized = false
     
+    var email: String? {
+        Auth.auth().currentUser?.email
+    }
+    
+    var uid: String? {
+        Auth.auth().currentUser?.uid
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
