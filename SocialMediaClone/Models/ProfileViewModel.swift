@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 
 class ProfileViewModel: ObservableObject {
-    @Published var post = [Post]()
+    @Published var posts = [Post]()
     
     init() {
         getUserPosts()
@@ -27,7 +27,12 @@ class ProfileViewModel: ObservableObject {
                     return
                 }
                 
-                
+                documentsSnapshot?.documents.forEach({ snapshot in
+                    let data = snapshot.data()
+                    let post = Post(data: data)
+                    self.posts.append(post)
+                    self.posts.sort { $0.timestamp > $1.timestamp }
+                })
             }
     }
 }
