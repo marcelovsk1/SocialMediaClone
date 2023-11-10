@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State private var text = ""
+    @ObservableObject var postsViewModel: PostsViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                
+            }
+            .transition(.move(edge: .top))
+        }
+        .padding()
     }
 }
 
 #Preview {
-    SearchView()
+    SearchView(postsViewModel: PostsViewModel())
 }

@@ -14,6 +14,7 @@
 		0B4569032AFE9BD400BCC93F /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4569022AFE9BD400BCC93F /* PostsViewModel.swift */; };
 		0B4569052AFE9C3600BCC93F /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4569042AFE9C3600BCC93F /* PostModel.swift */; };
 		0B4569082AFEA5D000BCC93F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0B4569072AFEA5D000BCC93F /* Kingfisher */; };
+		0B45690A2AFEA8A400BCC93F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4569092AFEA8A400BCC93F /* SearchView.swift */; };
 		0BBB64532AFBC4C800A47052 /* SocialMediaCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB64522AFBC4C800A47052 /* SocialMediaCloneApp.swift */; };
 		0BBB64552AFBC4C800A47052 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB64542AFBC4C800A47052 /* MainView.swift */; };
 		0BBB64572AFBC4CE00A47052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BBB64562AFBC4CE00A47052 /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		0B4569002AFD4BDE00BCC93F /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
 		0B4569022AFE9BD400BCC93F /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		0B4569042AFE9C3600BCC93F /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		0B4569092AFEA8A400BCC93F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0BBB644F2AFBC4C800A47052 /* SocialMediaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMediaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BBB64522AFBC4C800A47052 /* SocialMediaCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaCloneApp.swift; sourceTree = "<group>"; };
 		0BBB64542AFBC4C800A47052 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				0B4568FA2AFD202300BCC93F /* PostsView.swift */,
 				0B4568FC2AFD204300BCC93F /* ProfileView.swift */,
 				0B4568FE2AFD4BB100BCC93F /* AddPostView.swift */,
+				0B4569092AFEA8A400BCC93F /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				0BBB64682AFBFBD400A47052 /* ImagePicker.swift in Sources */,
 				0BBB65372AFC0D2900A47052 /* LoginViewModel.swift in Sources */,
 				0B4569012AFD4BDE00BCC93F /* AddPostViewModel.swift in Sources */,
+				0B45690A2AFEA8A400BCC93F /* SearchView.swift in Sources */,
 				0B4569032AFE9BD400BCC93F /* PostsViewModel.swift in Sources */,
 				0BBB64922AFC082200A47052 /* FirebaseManager.swift in Sources */,
 				0BBB64552AFBC4C800A47052 /* MainView.swift in Sources */,
