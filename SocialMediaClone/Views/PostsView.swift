@@ -82,6 +82,10 @@ struct PostComponent: View {
 }
 
 struct PostsView: View {
+    @StateObject var postsViewModel = PostsViewModel()
+    
+    @State private var showSearchVIew = false
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
