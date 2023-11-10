@@ -100,6 +100,20 @@ struct PostsView: View {
                 postsViewModel.posts = [Post]()
                 postsViewModel.fetchAllPosts()
             }
+            .navigationTitle("Posts")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showSearchVIew.toggle()
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.indigo)
+                    }
+                }
+            }
+            .sheet(isPresented: $showSearchVIew) {
+                SearchView(postsViewModel: postsViewModel)
+            }
         }
     }
 }
