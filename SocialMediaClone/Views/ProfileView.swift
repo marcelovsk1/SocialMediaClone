@@ -130,6 +130,16 @@ struct ProfileView: View {
             .sheet(isPresented: $showAddPostView)  {
                 AddPostView()
             }
+            .onAppear {
+                profileViewModel.posts = [Post]()
+                profileViewModel.getUserPosts()
+                
+                if !isInitialized {
+                    isLoadingProfileImage = true
+                    getProfileImage()
+                    isInitialized = true
+                }
+            }
         }
     }
     
