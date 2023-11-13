@@ -22,7 +22,7 @@ struct ProfilePostComponent: View {
                 Text(post.name)
                     .padding(.vertical, 2)
                     .padding(.horizontal)
-                    .foregroundColor(.indigo)
+                    .foregroundColor(.blue)
                 
                 Spacer()
             }
@@ -32,6 +32,7 @@ struct ProfilePostComponent: View {
                     .bold()
                 
                 Spacer()
+                
                 Text(post.timestamp.formatted())
                     .font(.caption2)
             }
@@ -89,11 +90,12 @@ struct ProfileView: View {
                         Text((email ?? "").components(separatedBy: "@").first ?? "")
                             .font(.largeTitle)
                             .multilineTextAlignment(.leading)
-                        
                     }
                     
-                    Spacer ()
+                    Spacer()
                 }
+                
+                Spacer()
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -103,17 +105,17 @@ struct ProfileView: View {
                         Image(systemName: "gear")
                             .font(.system(size: 24))
                             .bold()
-                            .foregroundColor(.indigo)
+                            .foregroundColor(.black)
                     }
                 }
             }
             .actionSheet(isPresented: $showLogOutOptions) {
                 ActionSheet(title: Text("Settings"),
-                message: Text("What do you want to do?"),
-                            buttons: [.destructive(Text("Sign out"),
-                                                   action: {
-                    loginViewModel.handleSignOut()
-                }), .cancel()
+                            message: Text("What do you want to do?"),
+                            buttons: [
+                                .destructive(Text("Sign Out"), action: {
+                                    loginViewModel.handleSignOut()
+                                }), .cancel()
                             ])
             }
             .toolbar {
@@ -123,11 +125,12 @@ struct ProfileView: View {
                     } label: {
                         Image(systemName: "plus")
                             .font(.system(size: 24))
-                            .foregroundColor(.indigo)
+                            .foregroundColor(.blue)
                     }
+
                 }
             }
-            .sheet(isPresented: $showAddPostView)  {
+            .sheet(isPresented: $showAddPostView) {
                 AddPostView()
             }
             .onAppear {
@@ -151,8 +154,8 @@ struct ProfileView: View {
                 print("Error while downloading profile image, \(error.localizedDescription)")
                 return
             }
-            guard let imageData = data, let image = UIImage(data: imageData)
-            else { return }
+            
+            guard let imageData = data, let image = UIImage(data: imageData) else { return }
             DispatchQueue.main.async {
                 profileImage = image
                 isLoadingProfileImage = false
@@ -160,6 +163,8 @@ struct ProfileView: View {
         }
     }
 }
+
+
 
 #Preview {
     ProfileView(loginViewModel: LoginViewModel())
